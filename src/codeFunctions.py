@@ -90,8 +90,8 @@ def createGraph():
     graph.add((ns.IP, ns.avaliação, Literal('proj;20;8.5', datatype=XSD.string)))
     graph.add((ns.IP, ns.avaliação, Literal('exame;70;9', datatype=XSD.string)))
 
-    print(graph.serialize(format='turtle'))
     return (graph, ns)
 
-createGraph()
+(g,n) = createGraph()
     
+print(g.serialize(format='turtle'))
