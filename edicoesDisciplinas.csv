@@ -1,0 +1,10 @@
+nomeDisciplina; anoLetivo; docentes; componentesAvaliacao
+"EC";"2021/2022";["Paulo Urbano", "Graça Gaspar"];[("proj1", 10, 0), ("proj2", 10, 0), ("proj3", 10, 0), ("exame", 70, 9.5)]
+"TC";"2019/2020";["André Souto", "Paulo Urbano"];[("avalCont1", 5, 0),("avalCont2", 5, 0),("avalCont3", 5, 0),("avalCont4", 5, 0), ("exame", 80, 9)]
+"IIA";"2020/2021";["Luis Correia", "Paulo Urbano", "Helena Aidos"];[("proj1", 10, 8.5), ("proj2", 10, 8.5), ("exame", 80, 9)]
+"TC";"2020/2021";["Ana Respício", "João Neto"];[("exame", 90, 9), ("avalCont1", 5, 10),("avalCont2", 5, 10) ]
+"LabP";"2019/2020";["Isabel Nunes", "André Souto", "Graça Gaspar"];[("projetos",70,9),("exercicios",30,9)]
+"LabP";"2022/2023";["João Neto", "Ana Paula Cláudio"];[("projeto1",10,9),("exercicios",10,0), ("projeto2",20,9), ("projeto3",30,9), ("projeto4",30,9)]
+"EC";"2020/2021";["Paulo Urbano", "Graça Gaspar"];[("proj1", 15, 9), ("exame", 70, 9), ("proj2", 15, 9), ]
+"LabP";"2015/2016";["Isabel Nunes", "Beatriz Carmo"];[("projeto1",10,9),("exercicios",10,0), ("projeto2",20,9), ("projeto3",30,9), ("projeto4",30,9)]
+"IP";"2021/2022";["Antónia Lopes", "Wellington", "Graça Gaspar"];[("avalCont", 10, 0), ("proj", 20, 8.5), ("exame", 70, 9)]
