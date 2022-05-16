@@ -12,6 +12,71 @@ def read_csv(csvf):
             yield row
 
 
+
+def createGraph2():
+    graph = Graph()
+    ns = Namespace('')
+
+    
+
+    # Professores
+    graph.add((ns.PauloUrbano, RDF.type, ns.Professor))
+    graph.add((ns.GracaGaspar, RDF.type, ns.Professor))
+    graph.add((ns.AndreSouto, RDF.type, ns.Professor))
+    graph.add((ns.LuisCorreia, RDF.type, ns.Professor))
+    graph.add((ns.HelenaAidos, RDF.type, ns.Professor))
+    graph.add((ns.AnaRespicio, RDF.type, ns.Professor))
+    graph.add((ns.JoaoNeto, RDF.type, ns.Professor))
+    graph.add((ns.IsalbelNunes, RDF.type, ns.Professor))
+    graph.add((ns.AnaClaudio, RDF.type, ns.Professor))
+    graph.add((ns.AntoniaLopes, RDF.type, ns.Professor))
+    graph.add((ns.Wellington, RDF.type, ns.Professor))
+
+    # Cadeiras
+    graph.add((ns.EC, RDF.type, ns.Cadeira))
+    graph.add((ns.TC, RDF.type, ns.Cadeira))
+    graph.add((ns.IIA, RDF.type, ns.Cadeira))
+    graph.add((ns.LABP, RDF.type, ns.Cadeira))
+    graph.add((ns.IP, RDF.type, ns.Cadeira))
+
+
+    # Execucoes
+    graph.add((ns.execucao1, RDF.type, ns.Execucao))
+    graph.add((ns.execucao1, ns.temAno, Literal("2021/2022")))
+    # Nao sei se devia ser tipo materia para nao estar a reutilizar Cadeira
+    graph.add((ns.execucao1, ns.temCadeira, ns.EC))
+    graph.add((ns.execucao1, ns.temProfessor, ns.PauloUrbano))
+    graph.add((ns.execucao1, ns.temProfessor, ns.GracaGaspar))
+    
+
+    # Avaliacoes
+    graph.add((ns.avaliacao1, RDF.type, ns.Avaliacao))
+    graph.add((ns.avaliacao1, ns.temNome, Literal("proj1", datatype=XSD.string)))
+    graph.add((ns.avaliacao1, ns.temNotaMinima, Literal(10, datatype=XSD.int)))
+    graph.add((ns.avaliacao1, ns.temPercentagem, Literal(0, datatype=XSD.float)))
+
+    graph.add((ns.avaliacao2, RDF.type, ns.Avaliacao))
+    graph.add((ns.avaliacao2, ns.temNome, Literal("proj2", datatype=XSD.string)))
+    graph.add((ns.avaliacao2, ns.temNotaMinima, Literal(10, datatype=XSD.int)))
+    graph.add((ns.avaliacao2, ns.temPercentagem, Literal(0, datatype=XSD.float)))
+
+    graph.add((ns.avaliacao3, RDF.type, ns.Avaliacao))
+    graph.add((ns.avaliacao3, ns.temNome, Literal("proj3", datatype=XSD.string)))
+    graph.add((ns.avaliacao3, ns.temNotaMinima, Literal(10, datatype=XSD.int)))
+    graph.add((ns.avaliacao3, ns.temPercentagem, Literal(0, datatype=XSD.float)))
+
+    graph.add((ns.avaliacao4, RDF.type, ns.Avaliacao))
+    graph.add((ns.avaliacao4, ns.temNome, Literal("exame", datatype=XSD.string)))
+    graph.add((ns.avaliacao4, ns.temNotaMinima, Literal(70, datatype=XSD.int)))
+    graph.add((ns.avaliacao4, ns.temPercentagem, Literal(9.5, datatype=XSD.float)))
+
+    graph.add((ns.execucao1, ns.temAvaliacao, ns.avaliacao1))
+    graph.add((ns.execucao1, ns.temAvaliacao, ns.avaliacao2))
+    graph.add((ns.execucao1, ns.temAvaliacao, ns.avaliacao3))
+    graph.add((ns.execucao1, ns.temAvaliacao, ns.avaliacao4))
+
+    return (graph, ns)
+
 def createGraph():
     graph = Graph()
     ns = Namespace('')
@@ -94,4 +159,6 @@ def createGraph():
 
 (g,n) = createGraph()
     
-print(g.serialize(format='turtle'))
+(g2,n2) = createGraph2()
+
+print(g2.serialize(format='turtle'))
